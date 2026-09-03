@@ -181,7 +181,7 @@ dpi-governance-ai/
 ### 1. Environment Setup
 Clone the repository and prepare environment files:
 ```bash
-git clone https://github.com/your-username/dpi-governance-ai.git
+git clone https://github.com/1234ashutosh1234/dpi-governance-ai
 cd dpi-governance-ai
 ```
 
@@ -333,8 +333,8 @@ This codebase has undergone a formal production-readiness audit with verified be
 
 ## Author
 
-**[Your Name]**  
+**[Ashutosh Raj]**  
 *AI & Software Engineer*  
 
-*(Note: Replace `[Your Name]` with your full name and add your GitHub / LinkedIn profiles as appropriate.)*
+
 
