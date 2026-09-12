@@ -29,9 +29,6 @@ from backend.app.api.recommendation import (
     router as recommendation_router
 )
 
-from backend.app.api.voice import (
-    router as voice_router
-)
 
 from backend.app.db.database import engine, Base
 
@@ -91,9 +88,6 @@ app.include_router(
     recommendation_router
 )
 
-app.include_router(
-    voice_router
-)
 
 
 @app.get("/")

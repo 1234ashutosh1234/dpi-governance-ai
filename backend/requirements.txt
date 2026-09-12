@@ -44,5 +44,4 @@ urllib3==2.7.0
 uvicorn==0.52.4
 xyzservices==2026.3.0
 geopy
-faster-whisper
-faster-whisper
+
