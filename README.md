@@ -1,340 +1,736 @@
-# DPI Governance AI
+# 🏛️ DPI Governance AI
 
-### AI-Powered Digital Public Infrastructure Decision Support Platform
+<p align="center">
+  <strong>AI-Powered Digital Public Infrastructure Decision Support Platform</strong>
+</p>
 
----
+<p align="center">
+  <a href="https://dpi-governance-ai-1.onrender.com">🌐 Live Demo</a> •
+  <a href="https://dpi-governance-ai.onrender.com">⚙️ API</a> •
+  <a href="https://dpi-governance-ai.onrender.com/health">❤️ Health</a> •
+  <a href="https://github.com/1234ashutosh1234/dpi-governance-ai">💻 Source</a>
+</p>
 
-DPI Governance AI is an enterprise-grade decision support platform that transforms unstructured citizen infrastructure grievances into structured, actionable governance intelligence. The system leverages AI/NLP request classification, district-level analytics, GIS hotspot cluster detection, multi-factor priority scoring, and contextual policy recommendations to help government decision-makers prioritize infrastructure investments efficiently.
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend-React%2019-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 19"/>
+  <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/ML-Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="Scikit-Learn"/>
+  <img src="https://img.shields.io/badge/GIS-Leaflet-199900?style=for-the-badge&logo=leaflet&logoColor=white" alt="Leaflet"/>
+  <img src="https://img.shields.io/badge/Deploy-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" alt="Render"/>
+</p>
 
----
-
-## Recruiter Summary & Problem Statement
-
-### The Engineering Challenge
-In public infrastructure administration, citizen grievances arrive via diverse channels (text, voice, local dialects) and remain largely unstructured. Governance teams struggle to aggregate thousands of disparate reports into data-driven development priorities, leading to resource misallocation and delayed interventions.
-
-### The Solution Pipeline
-DPI Governance AI addresses this challenge through an end-to-end data processing pipeline:
-
-```
-Citizen Input (Voice / Text)
-  └──> Multilingual NLP Classification
-        └──> District Aggregation & Intelligence
-              └──> GIS Spatial Hotspot Detection
-                    └──> Multi-Factor Priority Engine
-                          └──> AI Decision Support
-                                └──> Government Priority Ranking
-                                      └──> Actionable Policy Recommendations
-```
+> **DPI Governance AI turns citizen infrastructure grievances into decision-ready intelligence using NLP classification, district analytics, GIS hotspot detection, multi-factor priority scoring, and contextual policy recommendations.**
 
 ---
 
-## Key Features
+## ⭐ Why a Recruiter Should Care
 
-1. **Citizen Request Submission**: Allows citizens to report localized infrastructure issues with real-time sector tagging and district mapping.
-2. **Multilingual NLP Classification**: Automatically categorizes grievances (Water Supply, Roads, Healthcare, Education, Electricity) using Naive Bayes TF-IDF NLP classification.
-3. **AI Voice Request Engine**: Converts spoken citizen voice input into structured text using an integrated local OpenAI Whisper model.
-4. **Reverse Geocoding**: Automatically resolves latitude and longitude coordinates to district names and administrative boundaries.
-5. **Government Command Center Dashboard**: Provides real-time governance metrics, top problems, demand levels, and live system status indicators.
-6. **Sector Demand Analytics**: Visualizes percentage distribution and raw counts of citizen requests per infrastructure category.
-7. **District Intelligence**: Offers automated situation overviews, district demand assessments, and high-level AI insights.
-8. **Interactive GIS Hotspot Map**: Maps spatial cluster locations with custom severity indicators and geographic coordinates using Leaflet.
-9. **Multi-Factor Priority Engine**: Calculates dynamic priority scores based on citizen demand, population impact, infrastructure gap, urgency, and vulnerability.
-10. **Government Priority Projects**: Ranks development projects across sectors to surface high-priority interventions for administration teams.
-11. **AI Decision Support**: Enables interactive policy scenario modeling by adjusting district parameters and running real-time AI impact calculations.
-12. **Contextual Recommendations**: Provides estimated investment costs, required action items, and justification notes tailored to sector-specific gaps.
-13. **Recent Citizen Requests**: Displays a live, searchable activity feed of citizen grievances with language indicators and AI confidence scores.
+This project demonstrates more than a dashboard or CRUD application.
 
----
+It connects:
 
-## How It Works
+**raw citizen input → machine learning → geospatial intelligence → prioritization algorithms → decision support → production web application**
 
-1. **Ingestion & Processing**: A citizen submits a grievance via voice or text through the Citizen Portal.
-2. **NLP Classification**: The backend pipeline preprocesses the text and classifies it into an infrastructure category with an AI confidence rating.
-3. **District Aggregation**: Requests are aggregated by district (e.g., Patna) to compute sector percentages, top issues, and overall demand levels.
-4. **Spatial Analysis**: Geographic coordinates of reported grievances are analyzed to detect spatial demand clusters (hotspots).
-5. **Multi-Factor Priority Calculation**: The backend priority engine evaluates five normalized governance inputs (0–100 scale):
-   - **Citizen Demand** (weighted request volume)
-   - **Population Impact** (log-normalized population index)
-   - **Infrastructure Gap** (sector baseline deficit)
-   - **Urgency Level** (time-sensitivity factor)
-   - **Vulnerability Index** (socio-economic impact factor)
-6. **Project Ranking**: Projects are dynamically sorted by their calculated priority score (`Critical` >= 70, `Medium` >= 45, `Low` < 45).
-7. **Decision Support & Action**: Decision-makers select a project category or district to review recommended policy interventions, budget allocations, and execution steps.
+### Engineering signals this project demonstrates
+
+| Area | What it demonstrates |
+|---|---|
+| **Full-Stack Engineering** | React 19 + Vite frontend with FastAPI REST backend |
+| **AI / ML** | TF-IDF + Naive Bayes classification and confidence scoring |
+| **GIS** | GeoPandas, Shapely, PyProj, Leaflet / React-Leaflet |
+| **Algorithms** | Multi-factor governance priority engine |
+| **Backend** | Modular FastAPI routing, Pydantic validation, SQLAlchemy |
+| **Data** | District aggregation, category analytics, spatial demand analysis |
+| **Product Thinking** | Government command center + citizen-facing workflow |
+| **DevOps** | Separate production frontend/backend deployment on Render |
+| **API Design** | Centralized frontend API client and REST endpoint structure |
+| **Scalability Thinking** | Clear path toward PostGIS, workers, RBAC, observability, and model monitoring |
 
 ---
 
-## System Architecture
+# 🚀 Live Demo
 
-```mermaid
-flowchart TD
-    subgraph Frontend ["React 19 Frontend (Vite)"]
-        UI[Command Center Dashboard]
-        CP[Citizen Portal]
-        DS[AI Decision Support]
-        PP[Priority Projects Table]
-        MAP[GIS Hotspot Map]
-        API_CLIENT[Centralized API Client / Axios]
-    end
+### 🌐 Production Frontend
+**https://dpi-governance-ai-1.onrender.com**
 
-    subgraph Backend ["FastAPI Backend (Python 3.12)"]
-        FASTAPI[FastAPI Gateway]
-        NLP[NLP Classification Engine]
-        VOICE[Whisper Voice Engine]
-        GEO[GIS & Reverse Geocoding]
-        PRIORITY[Weighted Priority Engine]
-        ANALYTICS[District Analytics Engine]
-        RECOMMEND[Policy Recommendation Engine]
-    end
+### ⚙️ Production Backend
+**https://dpi-governance-ai.onrender.com**
 
-    subgraph Storage ["Data Layer"]
-        DB[(SQLite Database - dpi_governance.db)]
-    end
+### ❤️ Backend Health
+**https://dpi-governance-ai.onrender.com/health**
 
-    UI --> API_CLIENT
-    CP --> API_CLIENT
-    DS --> API_CLIENT
-    PP --> API_CLIENT
-    MAP --> API_CLIENT
+Expected production response:
 
-    API_CLIENT -->|HTTP REST| FASTAPI
-
-    FASTAPI --> NLP
-    FASTAPI --> VOICE
-    FASTAPI --> GEO
-    FASTAPI --> PRIORITY
-    FASTAPI --> ANALYTICS
-    FASTAPI --> RECOMMEND
-
-    NLP --> DB
-    ANALYTICS --> DB
-    PRIORITY --> DB
-    RECOMMEND --> DB
+```json
+{
+  "status": "healthy"
+}
 ```
 
+### 💻 GitHub Repository
+**https://github.com/1234ashutosh1234/dpi-governance-ai**
+
+> **Render free-tier note:** the service can sleep after inactivity, so the first request after idle time may take longer.
+
 ---
 
-## Tech Stack
+# 📸 Product Preview
+
+## Government Command Center
+
+![DPI Governance AI — Live Government Dashboard](docs/screenshots/live-dashboard.png)
+
+The live UI includes:
+
+- Government Dashboard
+- Citizen Portal
+- District selection
+- Sector filters
+- Analytics
+- AI Insights
+- GIS Hotspots
+- Priority Projects
+- Reports
+- Settings
+- AI Governance Engine status
+
+---
+
+# 🎯 The Problem
+
+Public infrastructure complaints are often fragmented across channels and difficult to convert into actionable policy decisions.
+
+A governance team needs to answer questions such as:
+
+- Which issue is creating the greatest demand?
+- Which district or area is becoming a hotspot?
+- Which population is most affected?
+- Which infrastructure gap is most urgent?
+- Which project should receive priority?
+- What intervention is likely to have the greatest impact?
+
+DPI Governance AI turns those questions into a structured software workflow.
+
+---
+
+# 🧠 The Solution
+
+```text
+Citizen Voice / Text
+        │
+        ▼
+┌─────────────────────┐
+│ Request Ingestion   │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ NLP Classification  │
+│ TF-IDF + Naive Bayes│
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ District Analytics  │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ GIS Hotspot Analysis│
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ Priority Engine     │
+│ Demand              │
+│ Population Impact   │
+│ Infrastructure Gap  │
+│ Urgency             │
+│ Vulnerability       │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ Project Ranking     │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ AI Decision Support │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ Recommendations     │
+└─────────────────────┘
+```
+
+---
+
+# 🔥 Core Product Capabilities
+
+## 1. Citizen Request Intelligence
+
+Infrastructure complaints can be collected and classified against sectors such as:
+
+- 💧 Water Supply
+- 🛣️ Roads
+- 🏥 Healthcare
+- ⚡ Electricity
+- 🎓 Education
+
+The platform is designed to convert unstructured request data into structured governance signals.
+
+---
+
+## 2. NLP Classification
+
+The ML pipeline uses:
+
+```text
+Raw request
+     ↓
+Text preprocessing
+     ↓
+TF-IDF representation
+     ↓
+Naive Bayes classifier
+     ↓
+Infrastructure category
+     ↓
+Confidence score
+```
+
+This gives the system a reproducible, interpretable baseline rather than treating classification as a black box.
+
+---
+
+## 3. GIS Hotspot Intelligence
+
+The project combines spatial technologies including:
+
+- GeoPandas
+- Shapely
+- PyProj
+- Leaflet
+- React-Leaflet
+
+The result is a geographic view of where infrastructure demand is concentrating.
+
+---
+
+## 4. Multi-Factor Priority Engine
+
+Instead of prioritizing by complaint count alone, the platform combines multiple governance signals:
+
+| Factor | Meaning |
+|---|---|
+| **Citizen Demand** | How much demand exists |
+| **Population Impact** | How many people may be affected |
+| **Infrastructure Gap** | How severe the service deficit is |
+| **Urgency** | How time-sensitive the problem is |
+| **Vulnerability** | Potential socio-economic impact |
+
+The normalized score is then mapped into:
+
+```text
+Critical  ≥ 70
+Medium    ≥ 45
+Low       < 45
+```
+
+This creates a more decision-oriented ranking model than a simple frequency dashboard.
+
+---
+
+## 5. AI Decision Support
+
+Decision-makers can explore policy scenarios by adjusting district/sector parameters and inspecting the resulting impact.
+
+The goal is not just:
+
+> “What happened?”
+
+but:
+
+> “What should we prioritize next?”
+
+---
+
+## 6. Contextual Policy Recommendations
+
+The recommendation layer can surface:
+
+- recommended actions
+- estimated investment
+- implementation steps
+- sector-specific justification
+
+This turns analytics into an operational decision-support workflow.
+
+---
+
+# 🏗️ Technical Architecture
+
+```text
+                     ┌─────────────────────────────┐
+                     │       Citizen / Admin       │
+                     │        Web Interface        │
+                     └──────────────┬──────────────┘
+                                    │
+                                    ▼
+                     ┌─────────────────────────────┐
+                     │       React 19 / Vite       │
+                     │ Dashboard · Citizen Portal  │
+                     │ Analytics · GIS · Projects  │
+                     └──────────────┬──────────────┘
+                                    │ REST
+                                    ▼
+                     ┌─────────────────────────────┐
+                     │         FastAPI API         │
+                     │ Requests · Analytics        │
+                     │ Hotspots · Priority         │
+                     │ Recommendations · Location │
+                     └───────┬─────────┬───────────┘
+                             │         │
+               ┌─────────────┘         └─────────────┐
+               ▼                                     ▼
+      ┌──────────────────┐                   ┌─────────────────┐
+      │    ML / NLP      │                   │   GIS Engine    │
+      │ TF-IDF           │                   │ GeoPandas       │
+      │ Naive Bayes      │                   │ Shapely         │
+      │ Confidence       │                   │ PyProj          │
+      └────────┬─────────┘                   └────────┬────────┘
+               │                                      │
+               └────────────────┬─────────────────────┘
+                                ▼
+                     ┌─────────────────────────────┐
+                     │   Priority / Decision      │
+                     │   Support Engine           │
+                     └──────────────┬──────────────┘
+                                    ▼
+                     ┌─────────────────────────────┐
+                     │ SQLAlchemy / SQLite         │
+                     │ Application Data            │
+                     └─────────────────────────────┘
+```
+
+---
+
+# 🧰 Technology Stack
 
 ### Frontend
-- **Framework**: React 19, Vite
-- **Language**: JavaScript (ES6+)
-- **Styling**: Vanilla CSS (Design Tokens, Dark Command Center Navy aesthetic)
-- **Routing**: React Router 7
-- **HTTP Client**: Axios (Centralized API base URL configuration)
-- **Mapping & GIS**: Leaflet, React-Leaflet
-- **Data Visualization**: Recharts
+- React 19
+- Vite
+- React Router
+- Axios
+- Recharts
+- Leaflet
+- React-Leaflet
+- JavaScript
+- CSS / design tokens
 
 ### Backend
-- **Framework**: Python 3.12, FastAPI
-- **Data Validation & ORM**: Pydantic v2, SQLAlchemy
-- **Server**: Uvicorn
-- **Database**: SQLite (`dpi_governance.db`)
+- Python
+- FastAPI
+- Uvicorn
+- Pydantic v2
+- SQLAlchemy
+- SQLite
 
-### AI / ML / GIS
-- **NLP / ML**: Scikit-Learn (Naive Bayes, TF-IDF Vectorizer), NLTK
-- **Speech Recognition**: Local OpenAI Whisper
-- **Audio Processing**: FFmpeg
-- **Spatial / GIS Analytics**: GeoPandas, Shapely, PyProj
+### ML / NLP
+- Scikit-Learn
+- TF-IDF
+- Naive Bayes
+- NLTK
+
+### GIS / Spatial
+- GeoPandas
+- Shapely
+- PyProj
+- Leaflet
+- React-Leaflet
+
+### Voice Architecture
+- Faster Whisper-based local transcription
+- FFmpeg audio normalization
+
+### Deployment
+- Render Static Site
+- Render Python Web Service
+- GitHub
 
 ---
 
-## Project Structure
+# 🔌 REST API
 
-```
+| Endpoint | Method | Purpose |
+|---|---:|---|
+| `/requests/` | GET | Retrieve / filter citizen requests |
+| `/analytics/district/{district}` | GET | District intelligence |
+| `/hotspots/district/{district}` | GET | Geographic hotspot data |
+| `/priority/calculate` | POST | Calculate priority score |
+| `/recommendations/district/{district}/category/{category}` | GET | Policy recommendations |
+| `/voice/transcribe` | POST | Voice transcription |
+| `/location/reverse` | POST | Reverse geocoding |
+| `/health` | GET | Production health check |
+
+---
+
+# 📂 Repository Structure
+
+```text
 dpi-governance-ai/
 │
-├── frontend/                     # React 19 Frontend Application
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── db/
+│   │   ├── models/
+│   │   └── services/
+│   └── requirements.txt
+│
+├── frontend/
 │   ├── src/
-│   │   ├── components/          # DecisionSupport, PriorityProjects, HotspotMap
-│   │   ├── pages/               # Dashboard, CitizenPortal
-│   │   ├── services/            # Centralized api.js service
-│   │   ├── App.jsx              # Main App layout & routing
-│   │   └── index.css            # Dark Command Center design system
-│   ├── .env.example             # Frontend environment template
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── App.jsx
+│   │   └── index.css
 │   └── package.json
 │
-├── backend/                      # FastAPI Backend Application
-│   ├── app/
-│   │   ├── api/                 # API Routes (analytics, requests, priority, etc.)
-│   │   ├── db/                  # Database session & models
-│   │   └── main.py              # FastAPI application entry point
-│   └── requirements.txt         # Python dependencies
+├── ml/
+├── data/
+├── docs/
+│   └── screenshots/
+│       └── live-dashboard.png
 │
-├── ml/                           # ML models & classification pipelines
-├── data/                         # Sample datasets & seed scripts
-├── docs/                         # Architecture documentation & guides
-├── _archive/                     # Legacy backup files archive
-├── .gitignore                    # Version control exclusion rules
-└── README.md                     # Project documentation
+├── _archive/
+├── .gitignore
+└── README.md
 ```
 
 ---
 
-## Getting Started
+# 💻 Local Development
 
-### Prerequisites
-- Node.js (v18+) & npm
+## Requirements
+
+- Node.js 18+
 - Python 3.12+
-- FFmpeg (required for voice transcription)
+- FFmpeg for local voice processing
 
-### 1. Environment Setup
-Clone the repository and prepare environment files:
+## Clone
+
 ```bash
-git clone https://github.com/1234ashutosh1234/dpi-governance-ai
+git clone https://github.com/1234ashutosh1234/dpi-governance-ai.git
 cd dpi-governance-ai
 ```
 
-Copy the frontend environment template:
+## Backend
+
 ```bash
-cd frontend
-cp .env.example .env
-cd ..
+python -m venv venv
 ```
 
-### 2. Backend Setup
-Create a Python virtual environment and install dependencies:
-```bash
-# From project root
-python -m venv venv
+### Windows PowerShell
 
-# Activate virtual environment
-# Windows PowerShell:
+```powershell
 .\venv\Scripts\Activate.ps1
-# macOS/Linux:
-# source venv/bin/activate
+```
 
-# Install dependencies
+### Install
+
+```bash
 pip install -r backend/requirements.txt
 ```
 
-Start the FastAPI backend server:
+### Run
+
 ```bash
 python -m uvicorn backend.app.main:app --reload --host 127.0.0.1 --port 8000
 ```
-*The API server will run at `http://127.0.0.1:8000`.*
 
-### 3. Frontend Setup
-In a new terminal window:
+Backend:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Frontend
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-*The web dashboard will open at `http://localhost:5173`.*
 
----
+Frontend:
 
-## Environment Variables
-
-### Frontend Configuration (`frontend/.env`)
-```env
-# Base URL pointing to the FastAPI backend
-VITE_API_BASE_URL=http://127.0.0.1:8000
+```text
+http://localhost:5173
 ```
 
 ---
 
-## API Overview
+# 🌐 Production Deployment
 
-| Endpoint | Method | Description |
-| :--- | :--- | :--- |
-| `/requests/` | `GET` | Retrieve all citizen grievances or filter by district/category. |
-| `/analytics/district/{district}` | `GET` | Get aggregated district intelligence, top issue, and demand percentages. |
-| `/hotspots/district/{district}` | `GET` | Get geographic cluster data, coordinates, and severity indicators. |
-| `/priority/calculate` | `POST` | Calculate priority score (0–100) and priority level from governance inputs. |
-| `/recommendations/district/{district}/category/{category}` | `GET` | Fetch contextual policy recommendations, action points, and budget estimates. |
-| `/voice/transcribe` | `POST` | Transcribe audio file to text using local Whisper engine. |
-| `/location/reverse` | `POST` | Resolve coordinates (lat/lng) to district location metadata. |
+```text
+                 PRODUCTION
 
----
-
-## Engineering Highlights
-
-- **Centralized API Architecture**: Utilizes an exported Axios client pattern with environment fallbacks (`import.meta.env.VITE_API_BASE_URL`) for clean deployment flexibility.
-- **Asynchronous Data Orchestration**: Performs parallel data fetching across endpoints with structured fallback states during transient API disruptions.
-- **Modular Component Design**: Decouples UI containers (Dashboard, Citizen Portal) from specialized functional modules (Decision Support, GIS Hotspot Map).
-- **Dark Navy Command Center Design System**: Built with CSS variable design tokens, modern typography, glassmorphism card containers, and responsive flex/grid layouts.
-- **Strict Data Sanitization & Normalization**: Normalizes large population figures into bounded logarithmic scales (0–100) to ensure mathematical stability in decision scoring.
-
----
-
-## Verification & Production Audit
-
-This codebase has undergone a formal production-readiness audit with verified benchmark results:
-
-- **Frontend Production Build**: `npm run build` succeeds cleanly with 0 compilation warnings or errors.
-- **Page Load Integrity**: All views (Dashboard, Citizen Portal, Hotspot Map, Priority Projects, Decision Support) load synchronously.
-- **Interactive Verification**: All 5 sector category selectors and `View AI →` action paths execute seamlessly.
-- **Layout & Responsiveness**: 0 page-level horizontal overflow on standard screen resolutions (tested at 1366px viewport width).
-- **Console Hygiene**: 0 unhandled application exceptions or console errors.
+┌─────────────────────────────────────┐
+│ Render Static Site                  │
+│ dpi-governance-ai-1.onrender.com   │
+└──────────────────┬──────────────────┘
+                   │
+                   │ VITE_API_BASE_URL
+                   ▼
+┌─────────────────────────────────────┐
+│ Render Web Service                  │
+│ dpi-governance-ai.onrender.com     │
+└──────────────────┬──────────────────┘
+                   │
+        ┌──────────┼──────────┐
+        ▼          ▼          ▼
+      ML/NLP      GIS      Priority
+        │          │          │
+        └──────────┼──────────┘
+                   ▼
+             Recommendations
+```
 
 ---
 
-## Current Local Demo Dataset State
+# 🔐 Security & Repository Hygiene
 
-*The metrics below represent the current active local demo dataset for Patna district:*
+The project uses environment-driven production configuration and explicit CORS.
 
-- **District**: Patna, Bihar
-- **Total Requests**: 16
-- **Geographic Hotspots**: 2 Clusters
-- **Top Infrastructure Issue**: Water Supply
-- **Demand Level**: Medium
-- **Category Breakdown**:
-  - Water Supply: 11 requests (68.75%)
-  - Roads: 2 requests (12.50%)
-  - Healthcare: 1 request (6.25%)
-  - Education: 1 request (6.25%)
-  - Electricity: 1 request (6.25%)
+Never commit:
 
----
+```text
+.env
+*.db
+venv/
+.venv/
+dist/
+API keys
+private tokens
+production credentials
+```
 
-## Screenshots
-
-### DPI Governance AI — Project Showcase
-
-<p align="center">
-  <img
-    src="docs/screenshots/dpi-governance-ai-showcase.png"
-    alt="DPI Governance AI project showcase"
-    width="100%"
-  />
-</p>
-
-> A consolidated view of the DPI Governance AI command center,
-> decision-support engine, GIS hotspot analysis, priority projects,
-> citizen requests, and citizen development portal.
+The production backend is configured to allow the deployed frontend origin.
 
 ---
 
-## Future Improvements
+# ✅ Production Verification
 
-- **Cloud Deployment**: Containerization via Docker and deployment to AWS / GCP.
-- **Enterprise Database**: Migration from SQLite to PostgreSQL / PostGIS for multi-region spatial querying.
-- **Authentication & RBAC**: Implementation of OAuth2 / JWT authentication for administrator and citizen roles.
-- **Automated Report Export**: Generation of downloadable PDF/Excel governance audit summaries for department heads.
-- **Model Monitoring & Retraining**: Automated pipeline for continuous NLP model evaluation as new grievances are resolved.
+The deployment has been verified at the system level:
 
----
+```text
+Frontend deployment       ✓ LIVE
+Backend deployment        ✓ LIVE
+Health endpoint           ✓ HEALTHY
+Frontend → Backend        ✓ CONNECTED
+Production API base URL   ✓ CONFIGURED
+Production CORS           ✓ CONFIGURED
+```
 
-## Security & Repository Hygiene
+The current live health endpoint returns:
 
-- **Configuration Management**: Centralized API base URL via Vite environment variables; no hardcoded API endpoints in production components.
-- **Git Hygiene**: Comprehensive `.gitignore` excludes virtual environments (`venv/`), database files (`*.db`), build artifacts (`dist/`), and OS metadata.
-- **Secrets Management**: Secrets and private keys excluded from version control.
-
----
-
-## License
-
-*License status pending selection by author (e.g., MIT License or Apache 2.0).*
+```json
+{"status":"healthy"}
+```
 
 ---
 
-## Author
+# ⚠️ Production Note: Voice Processing
 
-**[Ashutosh Raj]**  
-*AI & Software Engineer*  
+The repository contains a local Whisper-based voice pipeline.
 
+The voice implementation loads a Whisper model at application startup and invokes FFmpeg for audio conversion. Because that workload exceeds the memory budget of the current free Render instance, the heavy voice router is intentionally disabled in the current production deployment.
 
+### Why this is a good engineering trade-off
 
+The core product remains live:
+
+```text
+Dashboard
+Analytics
+GIS
+Priority Engine
+Decision Support
+Recommendations
+```
+
+while the heavy voice workload can be moved to a larger instance or a dedicated worker later.
+
+---
+
+# 🚀 Future Roadmap
+
+### Data & Infrastructure
+- PostgreSQL + PostGIS
+- managed cloud storage
+- async job processing
+- background workers
+
+### AI / ML
+- stronger classification models
+- model monitoring
+- automated retraining
+- LLM-assisted policy reasoning
+
+### Voice
+- dedicated Whisper worker
+- GPU inference
+- asynchronous audio processing
+
+### Security
+- OAuth2 / JWT
+- RBAC
+- audit logs
+- admin controls
+
+### Reporting
+- PDF governance reports
+- Excel exports
+- scheduled departmental summaries
+
+### Observability
+- metrics
+- tracing
+- structured logs
+- production alerting
+
+---
+
+# 🎬 Recruiter Demo — 3 to 5 Minutes
+
+### Recommended walkthrough
+
+**1. Open the Live Demo**
+
+https://dpi-governance-ai-1.onrender.com
+
+**2. Show the Government Command Center**
+
+Explain that the platform transforms infrastructure complaints into operational intelligence.
+
+**3. Pick a district**
+
+Show how district context changes the analytics view.
+
+**4. Demonstrate sector filters**
+
+Use:
+
+```text
+Water Supply
+Roads
+Healthcare
+Electricity
+Education
+```
+
+**5. Open Analytics**
+
+Explain demand distribution and district-level intelligence.
+
+**6. Open GIS Hotspots**
+
+Explain how geographic demand clusters can guide intervention planning.
+
+**7. Open Priority Projects**
+
+Explain the five-factor scoring model.
+
+**8. Open AI Decision Support**
+
+Show how the platform moves from descriptive analytics toward intervention planning.
+
+**9. Open `/health`**
+
+Show the backend is production-live.
+
+**10. Open GitHub**
+
+Explain the architecture and engineering decisions.
+
+---
+
+# 💬 Strong Interview Explanation
+
+> **“I built DPI Governance AI as a full-stack decision-support platform for public infrastructure planning. The system takes citizen grievances, classifies them with NLP, aggregates them by district, analyzes geographic hotspots, calculates multi-factor priority scores, ranks intervention projects, and provides contextual recommendations. I deployed the React frontend and FastAPI backend separately on Render and configured the production API connection and CORS.”**
+
+---
+
+# 🏆 What This Project Demonstrates
+
+### Software Engineering
+- modular architecture
+- API design
+- frontend/backend integration
+- data modeling
+- environment-based configuration
+
+### AI / ML
+- TF-IDF
+- Naive Bayes
+- confidence scoring
+- voice-processing architecture
+
+### GIS
+- spatial analysis
+- geocoding
+- hotspot visualization
+- district intelligence
+
+### Algorithms
+- normalized multi-factor scoring
+- ranking
+- decision-support logic
+
+### Product Engineering
+- government command center
+- citizen workflow
+- operational analytics
+- actionable recommendations
+
+### DevOps
+- production deployment
+- frontend/backend separation
+- Render
+- environment variables
+- live health checks
+
+---
+
+# 🔗 Important Links
+
+| Resource | URL |
+|---|---|
+| 🌐 Live Demo | https://dpi-governance-ai-1.onrender.com |
+| ⚙️ Backend API | https://dpi-governance-ai.onrender.com |
+| ❤️ Health Check | https://dpi-governance-ai.onrender.com/health |
+| 💻 GitHub | https://github.com/1234ashutosh1234/dpi-governance-ai |
+
+---
+
+# 👨‍💻 Author
+
+**Ashutosh Raj**  
+AI & Software Engineer
+
+GitHub:  
+https://github.com/1234ashutosh1234
+
+---
+
+# ⭐ Portfolio Summary
+
+DPI Governance AI is built around one engineering idea:
+
+```text
+Turn unstructured public problems
+            ↓
+into structured intelligence
+            ↓
+then into ranked decisions
+            ↓
+then into actionable recommendations.
+```
+
+That combination of **Full-Stack + AI/ML + GIS + Algorithms + Production Deployment** makes the project especially relevant for software engineering, AI engineering, data engineering, GIS, GovTech, and AI product roles.
