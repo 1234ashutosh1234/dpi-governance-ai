@@ -78,7 +78,13 @@ Expected production response:
 
 ## Government Command Center
 
-![DPI Governance AI — Live Government Dashboard](docs/screenshots/live-dashboard.png)
+<p align="center">
+  <img
+    src="docs/screenshots/dashboard-preview.png"
+    alt="DPI Governance AI — Live Government Dashboard"
+    width="1000"
+  />
+</p>
 
 The live UI includes:
 
@@ -94,7 +100,20 @@ The live UI includes:
 - Settings
 - AI Governance Engine status
 
+### Full Product Showcase
+
+<p align="center">
+  <img
+    src="docs/screenshots/dpi-governance-ai-showcase.png"
+    alt="DPI Governance AI — Full Product Showcase"
+    width="1000"
+  />
+</p>
+
 ---
+
+
+> **README image layout:** A compact 16:9 dashboard preview is shown first for fast recruiter scanning; the complete product showcase is kept below for deeper review.
 
 # 🎯 The Problem
 
